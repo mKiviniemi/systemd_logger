@@ -1,0 +1,10 @@
+[Unit]
+Description=Logging python loop
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /opt/logger/systemd_logger.py
+ExecStop=/bin/pkill -SIGINT -f /usr/bin/python3 /opt/logger/systemd_logger.py
+
+[Install]
+WantedBy=multi-user.target
